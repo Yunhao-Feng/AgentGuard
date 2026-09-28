@@ -1,0 +1,91 @@
+{
+  "title": "From risks to adaptive defenses",
+  "team": "AgentGuard Team",
+  "duration": 15,
+  "fps": 30,
+  "size": [
+    1920,
+    1080
+  ],
+  "url": "yunhao-feng.github.io/AgentGuard",
+  "scenes": [
+    {
+      "id": "question",
+      "start": 0,
+      "end": 3,
+      "label": "THE QUESTION",
+      "lines": [
+        "Agents can act.",
+        "Can we trust",
+        "the outcome?"
+      ],
+      "caption": "Agent safety goes beyond the final answer."
+    },
+    {
+      "id": "evidence",
+      "start": 3,
+      "end": 7.5,
+      "label": "01 \u2014 UNDERSTAND THE RISK",
+      "lines": [
+        "Measure the risk.",
+        "Verify the outcome."
+      ],
+      "caption": "AgentHazard measures risk. VERA verifies execution."
+    },
+    {
+      "id": "guards",
+      "start": 7.5,
+      "end": 12,
+      "label": "02 \u2014 BUILD THE DEFENSE",
+      "lines": [
+        "Learn. Audit. Adapt."
+      ],
+      "caption": "BraveGuard. HazardAuditor. AdaGuard."
+    },
+    {
+      "id": "explore",
+      "start": 12,
+      "end": 15,
+      "label": "OPEN RESEARCH / AGENTGUARD TEAM",
+      "lines": [
+        "From risks to",
+        "adaptive defenses."
+      ],
+      "caption": "Explore the papers, code, data, and models."
+    }
+  ],
+  "evidence": {
+    "AgentHazard": {
+      "instances": 2653,
+      "risks": 10,
+      "attacks": 10,
+      "pdf": "2604.02947v2.pdf",
+      "page": 6,
+      "table": "1"
+    },
+    "VERA": {
+      "cases": 1600,
+      "risks": 124,
+      "pdf": "2607.01793v2.pdf",
+      "page": 1,
+      "table": "Abstract"
+    }
+  },
+  "guard_cards": [
+    [
+      "BraveGuard",
+      "Evolving threats",
+      "Trajectory supervision"
+    ],
+    [
+      "HazardAuditor",
+      "Execution evidence",
+      "GuardPO"
+    ],
+    [
+      "AdaGuard",
+      "Your policy",
+      "Adaptive judgments"
+    ]
+  ]
+}

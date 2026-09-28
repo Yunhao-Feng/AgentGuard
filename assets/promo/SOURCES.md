@@ -1,6 +1,6 @@
 # From Agent Risks to Adaptive Defenses — source ledger
 
-Created for Yunhao Feng and collaborators, September 28, 2026.
+Archived 90-second film source ledger for AgentGuard Team, September 28, 2026.
 
 ## What the film is
 
@@ -43,7 +43,7 @@ Verified September 28, 2026. Resource availability can change after this date.
 - VERA: [paper](https://arxiv.org/abs/2607.01793), [code](https://github.com/Yunhao-Feng/Vera), [VERA-Bench](https://github.com/Yunhao-Feng/Vera/tree/main/evaluation_bench).
 - BraveGuard: [paper](https://arxiv.org/abs/2606.01166), [code](https://github.com/Yunhao-Feng/BraveGuard), [model collection](https://huggingface.co/Yunhao-Feng/BraveGuard). Checkpoints are in subfolders; consult the actual model files before inference.
 - HazardAuditor: [arXiv](https://arxiv.org/abs/2609.15134), [project](https://yunhao-feng.github.io/HazardAuditor/), [code](https://github.com/Yunhao-Feng/HazardAuditor), [weights](https://huggingface.co/Yunhao-Feng/HazardAuditor). Film numbers refer to the supplied manuscript; public bibliographic metadata follows the project page.
-- AdaGuard: [code](https://github.com/Yunhao-Feng/AdaGuard). The source release does not distribute the original dataset or trained weights. Local paper metadata is used; no arXiv identifier is invented.
+- AdaGuard: [code](https://github.com/Yunhao-Feng/AdaGuard). Models: [0.6B](https://huggingface.co/Yunhao-Feng/AdaGuard-0.6B), [4B](https://huggingface.co/Yunhao-Feng/AdaGuard-4B), [8B](https://huggingface.co/Yunhao-Feng/AdaGuard-8B). Local paper metadata is used; no arXiv identifier is invented.
 
 Website colors reference [HazardArena](https://hazardarena-team.github.io/): white/light gray, dark text, and #2563eb blue, with a navy dark theme. This is visual inspiration, not a claim of partnership.
 

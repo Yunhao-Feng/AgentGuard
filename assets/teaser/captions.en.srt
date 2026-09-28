@@ -1,0 +1,16 @@
+1
+00:00:00,000 --> 00:00:03,000
+Agent safety goes beyond the final answer.
+
+2
+00:00:03,000 --> 00:00:07,500
+AgentHazard measures risk. VERA verifies execution.
+
+3
+00:00:07,500 --> 00:00:12,000
+BraveGuard. HazardAuditor. AdaGuard.
+
+4
+00:00:12,000 --> 00:00:15,000
+Explore the papers, code, data, and models.
+

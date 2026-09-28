@@ -3,3 +3,5 @@ _site/
 .qa/
 .venv/
 __pycache__/
+
+.venv-teaser/

@@ -13,7 +13,7 @@
   const ext = (label,url) => `<a href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`;
   const numbers = window.PAPER_RESULTS;
   const video = $('#research-film');
-  const starts = [0,8,21,34,47,64,81];
+  const starts = [0,3,7.5,12];
   function stats(p) {
     if(p.id==='agenthazard') return `<div class="double-stat"><div><strong>${numbers.agenthazard.instances.toLocaleString('en')}</strong><span>${tr('agenthazardStat')}</span></div><div><strong>${numbers.agenthazard.risks} × ${numbers.agenthazard.attacks}</strong><span>${tr('agenthazardStat2')}</span></div></div>`;
     if(p.id==='vera') return `<div class="double-stat"><div><strong>${numbers.vera.cases.toLocaleString('en')}</strong><span>${tr('veraStat')}</span></div><div><strong>${numbers.vera.risks}</strong><span>${tr('veraStat2')}</span></div></div>`;
@@ -22,7 +22,7 @@
   }
   function renderProjects() {
     for (const kind of ['foundation','guard']) {
-      $(`#${kind}-projects`).innerHTML=window.PROJECTS.filter(p=>p.kind===kind).map(p=>`<article id="${p.id}" class="project ${kind}"><div class="project-top"><span class="tag">${tr(p.id+'Label')}</span><span>${p.number}</span></div><h3>${p.name}</h3><h4>${tr(p.id+'Tagline')}</h4><p>${tr(p.id+'Desc')}</p>${stats(p)}<button class="figure-button" data-figure="${p.id}" aria-label="${escape(tr('figureOpen')+' — '+p.name)}"><img src="assets/promo/figures/${p.id}.png" alt="${escape(p.name+' — '+tr('figure'))}" loading="lazy" width="900" height="450"><span>${tr('figure')} <span aria-hidden="true">↗</span></span></button>${p.id==='adaguard'?`<p class="release-note">${tr('adaguardRelease')}</p>`:''}<div class="project-links">${ext(tr('paper'),p.paper)}${p.links.map(([key,url])=>ext(tr(key),url)).join('')}<button data-cite="${p.id}">${tr('citation')} <span aria-hidden="true">{ }</span></button></div></article>`).join('');
+      $(`#${kind}-projects`).innerHTML=window.PROJECTS.filter(p=>p.kind===kind).map(p=>`<article id="${p.id}" class="project ${kind}"><div class="project-top"><span class="tag">${tr(p.id+'Label')}</span><span>${p.number}</span></div><h3>${p.name}</h3><h4>${tr(p.id+'Tagline')}</h4><p>${tr(p.id+'Desc')}</p>${stats(p)}<button class="figure-button" data-figure="${p.id}" aria-label="${escape(tr('figureOpen')+' — '+p.name)}"><img src="assets/promo/figures/${p.id}.png" alt="${escape(p.name+' — '+tr('figure'))}" loading="lazy" width="900" height="450"><span>${tr('figure')} <span aria-hidden="true">↗</span></span></button>${p.id==='adaguard'?`<p class="release-note">${tr('adaguardRelease')}</p>`:''}<div class="project-links">${ext(tr('paper'),p.paper)}${p.links.map(([key,url])=>ext(tr(key),url)).join('')}<a href="metrics.html#${p.id}">${tr('metrics')} ↗</a><button data-cite="${p.id}">${tr('citation')} <span aria-hidden="true">{ }</span></button></div></article>`).join('');
     }
     all('[data-figure]').forEach(b=>b.addEventListener('click',()=>openFigure(b.dataset.figure)));
     all('[data-cite]').forEach(b=>b.addEventListener('click',()=>openCitation(b.dataset.cite)));
@@ -36,14 +36,17 @@
     ['ourResources',[
       ['AgentHazard · Hugging Face','https://huggingface.co/datasets/Yunhao-Feng/AgentHazard','dataset'],
       ['VERA-Bench','https://github.com/Yunhao-Feng/Vera/tree/main/evaluation_bench','dataset'],
+      ['VERA · AgentImages','https://huggingface.co/datasets/Yunhao-Feng/AgentImages','environments'],
       ['BraveGuard · Hugging Face','https://huggingface.co/Yunhao-Feng/BraveGuard','models'],
       ['HazardAuditor · Hugging Face','https://huggingface.co/Yunhao-Feng/HazardAuditor','models'],
-      ['AdaGuard · GitHub','https://github.com/Yunhao-Feng/AdaGuard','sourceOnly']]],
+      ['AdaGuard · 0.6B','https://huggingface.co/Yunhao-Feng/AdaGuard-0.6B','models'],
+      ['AdaGuard · 4B','https://huggingface.co/Yunhao-Feng/AdaGuard-4B','models'],
+      ['AdaGuard · 8B','https://huggingface.co/Yunhao-Feng/AdaGuard-8B','models']]],
     ['benchmarks',[
       ['AgentDojo','https://github.com/ethz-spylab/agentdojo','repository'],
       ['Agent-SafetyBench','https://github.com/thu-coai/Agent-SafetyBench','repository'],
       ['SWE-bench','https://www.swebench.com/','project'],
-      ['OWASP GenAI Security','https://genai.owasp.org/','project'],
+      ['OWASP GenAI Security','https://owasp.org/projects/top-10-for-large-language-model-applications','project'],
       ['MITRE ATLAS','https://atlas.mitre.org/','project']]],
     ['building',[
       ['HazardArena','https://hazardarena-team.github.io/','project'],
@@ -65,7 +68,7 @@
     $('#verdict-desc').textContent=tr(denied?'unsafeReason':'safeReason');
   }
   function renderChapters(){
-    $('#chapters').innerHTML=starts.map((start,i)=>`<button data-time="${start}"><time>${String(Math.floor(start/60)).padStart(2,'0')}:${String(start%60).padStart(2,'0')}</time><span>${tr('chapters')[i]}</span><span class="chapter-arrow" aria-hidden="true">↗</span></button>`).join('');
+    $('#chapters').innerHTML=starts.map((start,i)=>`<button data-time="${start}"><time>${String(Math.floor(start/60)).padStart(2,'0')}:${String(Math.floor(start%60)).padStart(2,'0')}</time><span>${tr('chapters')[i]}</span><span class="chapter-arrow" aria-hidden="true">↗</span></button>`).join('');
     all('[data-time]').forEach(b=>b.addEventListener('click',()=>playFrom(Number(b.dataset.time))));
     updateChapter();
   }

@@ -1,0 +1,15 @@
+00:00:00.000 — 00:00:03.000
+Agents can act. Can we trust the outcome?
+Agent safety goes beyond the final answer.
+
+00:00:03.000 — 00:00:07.500
+Measure the risk. Verify the outcome.
+AgentHazard measures risk. VERA verifies execution.
+
+00:00:07.500 — 00:00:12.000
+Learn. Audit. Adapt.
+BraveGuard. HazardAuditor. AdaGuard.
+
+00:00:12.000 — 00:00:15.000
+From risks to adaptive defenses.
+Explore the papers, code, data, and models.
