@@ -1,0 +1,30 @@
+{
+  "title": "From Agent Risks to Adaptive Defenses",
+  "author": "Yunhao Feng & collaborators",
+  "duration": 90,
+  "fps": 30,
+  "size": [1920, 1080],
+  "sources": {
+    "agenthazard": {"file":"2604.02947v2.pdf", "title":"AgentHazard: A Benchmark for Evaluating Harmful Behavior in Computer-Use Agents", "figure_page":4,"figure":"Figure 2", "crop":[76,84,540,336],"evidence":"Abstract and Section 3; 2,653 instances, 10 risk categories, 10 attack strategies", "url":"https://arxiv.org/abs/2604.02947"},
+    "vera": {"file":"2607.01793v2.pdf", "title":"Safety Testing LLM Agents at Scale: From Risk Discovery to Evidence-Grounded Verification", "figure_page":3,"figure":"Figure 1", "crop":[49,50,562,247],"evidence":"Abstract; VERA-Bench: 1,600 executable cases and 124 risk categories", "url":"https://arxiv.org/abs/2607.01793"},
+    "braveguard": {"file":"2606.01166v2.pdf", "title":"BraveGuard: From Open-World Threats to Safer Computer-Use Agents", "figure_page":4,"figure":"Figure 2", "crop":[71,84,540,433],"evidence":"Table 1, PDF page 7; AgentHazard-Strongest, GPT-5.5 trajectories generated with OpenClaw 3.11; off-the-shelf model-group mean vs BraveGuard-trained model-group mean, not a paired single-model gain", "url":"https://arxiv.org/abs/2606.01166"},
+    "hazardauditor": {"file":"379_HazardAuditor_From_Executa.pdf", "title":"HazardAuditor: From Executable Threats to Safer Computer-Use Agents", "figure_page":2,"figure":"Figure 1", "crop":[151,80,459,274],"evidence":"Table 1, PDF page 8; balanced CUA-EXEC, 100 safe + 100 unsafe trajectories per framework; Accuracy (%); BraveGuard-Qwen3-Guard-8B vs HAZARDAUDITOR", "url":"https://arxiv.org/abs/2609.15134"},
+    "adaguard": {"file":"AdaGuard__Arxiv_.pdf", "title":"AdaGuard: An Adaptive Guard Model with User-Defined Policies", "figure_page":2,"figure":"Figure 1", "crop":[266,232,504,382],"evidence":"Figure 1 for the policy counterfactual; Table 1, PDF page 7 for 89.30% AdaGuard-4B binary accuracy on the 1,000-example AdaptiveSafety test set", "url":"https://github.com/Yunhao-Feng/AdaGuard"}
+  },
+  "results": {
+    "agenthazard":{"instances":2653,"risks":10,"attacks":10},
+    "vera":{"cases":1600,"risks":124},
+    "braveguard":{"baseline":38.79,"trained":82.38,"metric":"Accuracy (%)","dataset":"AgentHazard-Strongest","setting":"GPT-5.5 / OpenClaw 3.11; model-group means"},
+    "hazardauditor":{"frameworks":["Claude Code","Codex","Hermes","OpenClaw"],"baseline":[81.5,91.5,77.0,71.0],"auditor":[94.0,95.5,86.5,87.5],"metric":"Accuracy (%)","dataset":"CUA-EXEC","samples":"100 safe + 100 unsafe trajectories per framework","baseline_name":"BraveGuard-Qwen3-Guard-8B","auditor_name":"HazardAuditor"},
+    "adaguard":{"accuracy":89.30,"model":"AdaGuard-4B","dataset":"AdaptiveSafety","samples":1000}
+  },
+  "scenes":[
+    {"id":"hook","start":0,"end":8,"chapter":"THE PROBLEM","title":"A harmless step.","second":"A harmful trajectory.","caption":"Agent safety depends on the entire execution trajectory.","source":"Reconstruction of AgentHazard Figure 1 (p. 2); not a live model run."},
+    {"id":"agenthazard","start":8,"end":21,"chapter":"01 / MEASURE","title":"AgentHazard","second":"Make risks measurable.","caption":"2,653 executable risk instances. Ten risk categories. Ten attack strategies.","source":"AgentHazard | Figure 2, p. 4; Abstract and Section 3 | Paper-reported statistics"},
+    {"id":"vera","start":21,"end":34,"chapter":"02 / VERIFY","title":"VERA","second":"Verify what actually happened.","caption":"Discover risks, construct executable tests, and verify observable outcomes.","source":"VERA | Figure 1, p. 3; Abstract | Paper-reported statistics"},
+    {"id":"braveguard","start":34,"end":47,"chapter":"03 / LEARN","title":"BraveGuard","second":"Learn from evolving threats.","caption":"Open-world threats become execution traces, supervision, and stronger guards.","source":"BraveGuard | Figure 2, p. 4; Table 1, p. 7 | Paper-reported results"},
+    {"id":"hazardauditor","start":47,"end":64,"chapter":"04 / ALIGN","title":"HazardAuditor","second":"Ground decisions in execution.","caption":"GuardPO aligns training with the safety decision across agent frameworks.","source":"HazardAuditor | Table 1, p. 8 (supplied manuscript) | Paper-reported results"},
+    {"id":"adaguard","start":64,"end":81,"chapter":"05 / ADAPT","title":"AdaGuard","second":"Same action. Different policy.","caption":"The action stays the same. The governing policy changes the verdict.","source":"AdaGuard | Figure 1, p. 2; Table 1, p. 7 | Reconstructed example; reported result"},
+    {"id":"outro","start":81,"end":90,"chapter":"EXPLORE THE RESEARCH","title":"Build more capable agents.","second":"Make every action accountable.","caption":"Explore the papers, code, datasets, and released guard models.","source":"Five complementary research contributions. Not a single integrated deployment."}
+  ]
+}

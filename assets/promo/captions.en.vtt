@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.000
+Agent safety depends on the entire execution trajectory.
+
+00:00:08.000 --> 00:00:21.000
+2,653 executable risk instances. Ten risk categories. Ten attack strategies.
+
+00:00:21.000 --> 00:00:34.000
+Discover risks, construct executable tests, and verify observable outcomes.
+
+00:00:34.000 --> 00:00:47.000
+Open-world threats become execution traces, supervision, and stronger guards.
+
+00:00:47.000 --> 00:01:04.000
+GuardPO aligns training with the safety decision across agent frameworks.
+
+00:01:04.000 --> 00:01:21.000
+The action stays the same. The governing policy changes the verdict.
+
+00:01:21.000 --> 00:01:30.000
+Explore the papers, code, datasets, and released guard models.
+

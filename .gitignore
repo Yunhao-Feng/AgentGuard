@@ -1,0 +1,5 @@
+.DS_Store
+_site/
+.qa/
+.venv/
+__pycache__/

@@ -1,0 +1,27 @@
+00:00:00.000  A harmless step. A harmful trajectory.
+Agent safety depends on the entire execution trajectory.
+Source: Reconstruction of AgentHazard Figure 1 (p. 2); not a live model run.
+
+00:00:08.000  AgentHazard Make risks measurable.
+2,653 executable risk instances. Ten risk categories. Ten attack strategies.
+Source: AgentHazard | Figure 2, p. 4; Abstract and Section 3 | Paper-reported statistics
+
+00:00:21.000  VERA Verify what actually happened.
+Discover risks, construct executable tests, and verify observable outcomes.
+Source: VERA | Figure 1, p. 3; Abstract | Paper-reported statistics
+
+00:00:34.000  BraveGuard Learn from evolving threats.
+Open-world threats become execution traces, supervision, and stronger guards.
+Source: BraveGuard | Figure 2, p. 4; Table 1, p. 7 | Paper-reported results
+
+00:00:47.000  HazardAuditor Ground decisions in execution.
+GuardPO aligns training with the safety decision across agent frameworks.
+Source: HazardAuditor | Table 1, p. 8 (supplied manuscript) | Paper-reported results
+
+00:01:04.000  AdaGuard Same action. Different policy.
+The action stays the same. The governing policy changes the verdict.
+Source: AdaGuard | Figure 1, p. 2; Table 1, p. 7 | Reconstructed example; reported result
+
+00:01:21.000  Build more capable agents. Make every action accountable.
+Explore the papers, code, datasets, and released guard models.
+Source: Five complementary research contributions. Not a single integrated deployment.

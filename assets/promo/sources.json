@@ -1,0 +1,160 @@
+{
+  "title": "From Agent Risks to Adaptive Defenses",
+  "sources": {
+    "agenthazard": {
+      "file": "2604.02947v2.pdf",
+      "title": "AgentHazard: A Benchmark for Evaluating Harmful Behavior in Computer-Use Agents",
+      "figure_page": 4,
+      "figure": "Figure 2",
+      "crop": [
+        76,
+        84,
+        540,
+        336
+      ],
+      "evidence": "Abstract and Section 3; 2,653 instances, 10 risk categories, 10 attack strategies",
+      "url": "https://arxiv.org/abs/2604.02947",
+      "sha256": "7e10f3451239b0de3315a321784a91460189fa591aacea2bf807a2d6d35a1aae",
+      "asset": "figures/agenthazard.png"
+    },
+    "vera": {
+      "file": "2607.01793v2.pdf",
+      "title": "Safety Testing LLM Agents at Scale: From Risk Discovery to Evidence-Grounded Verification",
+      "figure_page": 3,
+      "figure": "Figure 1",
+      "crop": [
+        49,
+        50,
+        562,
+        247
+      ],
+      "evidence": "Abstract; VERA-Bench: 1,600 executable cases and 124 risk categories",
+      "url": "https://arxiv.org/abs/2607.01793",
+      "sha256": "eae6c8c8e7adbdbcae792bfb3b0bc045d5d46f981e903b181d340afa82d3cbda",
+      "asset": "figures/vera.png"
+    },
+    "braveguard": {
+      "file": "2606.01166v2.pdf",
+      "title": "BraveGuard: From Open-World Threats to Safer Computer-Use Agents",
+      "figure_page": 4,
+      "figure": "Figure 2",
+      "crop": [
+        71,
+        84,
+        540,
+        433
+      ],
+      "evidence": "Table 1, PDF page 7; AgentHazard-Strongest, GPT-5.5 trajectories generated with OpenClaw 3.11; off-the-shelf model-group mean vs BraveGuard-trained model-group mean, not a paired single-model gain",
+      "url": "https://arxiv.org/abs/2606.01166",
+      "sha256": "d13776c990ac23a6181a1a56761f5e363ba6e857427cef64d18f1587210ea27f",
+      "asset": "figures/braveguard.png"
+    },
+    "hazardauditor": {
+      "file": "379_HazardAuditor_From_Executa.pdf",
+      "title": "HazardAuditor: From Executable Threats to Safer Computer-Use Agents",
+      "figure_page": 2,
+      "figure": "Figure 1",
+      "crop": [
+        151,
+        80,
+        459,
+        274
+      ],
+      "evidence": "Table 1, PDF page 8; balanced CUA-EXEC, 100 safe + 100 unsafe trajectories per framework; Accuracy (%); BraveGuard-Qwen3-Guard-8B vs HAZARDAUDITOR",
+      "url": "https://arxiv.org/abs/2609.15134",
+      "sha256": "9ec997678c8bf23ccb88bb23b263e5a1ea10664ebfa0855358ba3c84a8190698",
+      "asset": "figures/hazardauditor.png"
+    },
+    "adaguard": {
+      "file": "AdaGuard__Arxiv_.pdf",
+      "title": "AdaGuard: An Adaptive Guard Model with User-Defined Policies",
+      "figure_page": 2,
+      "figure": "Figure 1",
+      "crop": [
+        266,
+        232,
+        504,
+        382
+      ],
+      "evidence": "Figure 1 for the policy counterfactual; Table 1, PDF page 7 for 89.30% AdaGuard-4B binary accuracy on the 1,000-example AdaptiveSafety test set",
+      "url": "https://github.com/Yunhao-Feng/AdaGuard",
+      "sha256": "caf2fa38febac52519d5e998b2bc503ddd6181ce1371c81a538159b630173ecb",
+      "asset": "figures/adaguard.png"
+    }
+  },
+  "results": {
+    "agenthazard": {
+      "instances": 2653,
+      "risks": 10,
+      "attacks": 10
+    },
+    "vera": {
+      "cases": 1600,
+      "risks": 124
+    },
+    "braveguard": {
+      "baseline": 38.79,
+      "trained": 82.38,
+      "metric": "Accuracy (%)",
+      "dataset": "AgentHazard-Strongest",
+      "setting": "GPT-5.5 / OpenClaw 3.11; model-group means"
+    },
+    "hazardauditor": {
+      "frameworks": [
+        "Claude Code",
+        "Codex",
+        "Hermes",
+        "OpenClaw"
+      ],
+      "baseline": [
+        81.5,
+        91.5,
+        77.0,
+        71.0
+      ],
+      "auditor": [
+        94.0,
+        95.5,
+        86.5,
+        87.5
+      ],
+      "metric": "Accuracy (%)",
+      "dataset": "CUA-EXEC",
+      "samples": "100 safe + 100 unsafe trajectories per framework",
+      "baseline_name": "BraveGuard-Qwen3-Guard-8B",
+      "auditor_name": "HazardAuditor"
+    },
+    "adaguard": {
+      "accuracy": 89.3,
+      "model": "AdaGuard-4B",
+      "dataset": "AdaptiveSafety",
+      "samples": 1000
+    }
+  },
+  "transformations": [
+    "Figure-only PDF crops at 3x PDF-point resolution; no recoloring or retouching.",
+    "Charts redraw published point estimates on 0–100% axes. No uncertainty was supplied; none invented.",
+    "Opening and policy examples are explanatory reconstructions, not recorded inference."
+  ],
+  "audio": {
+    "type": "original procedural synthesis",
+    "seed": 20260928,
+    "sample_rate": 48000,
+    "narration": false,
+    "peak_before_encoding": 0.3799999952316284,
+    "rms_before_encoding": 0.08099447935819626
+  },
+  "render": {
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "duration": 90,
+    "font": "DejaVuSans.ttf",
+    "bold_font": "DejaVuSans-Bold.ttf",
+    "pillow": "12.3.0",
+    "python": "3.12.14"
+  },
+  "film_sha256": "2f974efae6944bb0db910ec78b4dc97b273e24b2e0e4c653e32f4b33a7862bdb"
+}

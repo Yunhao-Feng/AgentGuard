@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+AgentHazard: evaluate harmful behavior across multi-step agent trajectories.
+
+00:06.000 --> 00:12.000
+VERA: discover risks, execute safety cases, and verify observable evidence.
+
+00:12.000 --> 00:18.000
+BraveGuard, HazardAuditor, and AdaGuard explore complementary defense directions.
+
+00:18.000 --> 00:24.000
+AdaGuard: the same recorded action can be permitted or prohibited under different policies.
