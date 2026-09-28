@@ -5,3 +5,8 @@ _site/
 __pycache__/
 
 .venv-teaser/
+
+# Source documents are not part of this public website.
+*.pdf
+*.doc
+*.docx

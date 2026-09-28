@@ -14,7 +14,7 @@
 | **实际发生了什么？** | **VERA** | 发现风险、构建可执行安全案例，并验证可观测的执行结果。 | [论文](https://arxiv.org/abs/2607.01793) · [代码](https://github.com/Yunhao-Feng/Vera) |
 | **如何从演化威胁中学习？** | **BraveGuard** | 将开放世界的威胁发现与执行轨迹转化为防护模型的监督信号。 | [论文](https://arxiv.org/abs/2606.01166) · [代码](https://github.com/Yunhao-Feng/BraveGuard) |
 | **如何优化安全判决？** | **HazardAuditor** | 用可执行威胁构建监督，通过 GuardPO 优化安全审计能力。 | [论文](https://arxiv.org/abs/2609.15134) · [代码](https://github.com/Yunhao-Feng/HazardAuditor) |
-| **策略变化后如何判断？** | **AdaGuard** | 基于用户定义策略评估轨迹并识别违规规则，以 AdaptiveSafety 与 SafePO 支持学习。 | [论文](AdaGuard__Arxiv_.pdf) · [代码](https://github.com/Yunhao-Feng/AdaGuard) |
+| **策略变化后如何判断？** | **AdaGuard** | 基于用户定义策略评估轨迹并识别违规规则，以 AdaptiveSafety 与 SafePO 支持学习。 | [研究资源](https://github.com/Yunhao-Feng/AdaGuard) · [代码](https://github.com/Yunhao-Feng/AdaGuard) |
 
 **量化 → 验证 → 学习 → 适应。** 这是一条概念上的研究主线；五项工作各有独立贡献，并非一个已集成部署的系统。
 
@@ -40,15 +40,19 @@
 
 | 研究产物 | 论文报告的规模 | 来源 |
 | :-- | :-- | :-- |
-| **AgentHazard** | 2,653 个实例 · 10 类风险 · 10 类攻击策略 | [表 1，第 6 页](2604.02947v2.pdf#page=6) |
-| **VERA-Bench** | 1,600 个可执行案例 · 124 类风险 | [摘要](2607.01793v2.pdf#page=1) |
-| **BraveGuard 任务池** | 7,308 个任务 · 28 类风险 · 32 类攻击方法 | [表 4，第 13 页](2606.01166v2.pdf#page=13) |
-| **CUA-EXEC 诊断集** | 4 个框架 · 各 100 条安全与 100 条不安全轨迹 | [表 1，第 8 页](379_HazardAuditor_From_Executa.pdf#page=8) |
-| **AdaptiveSafety** | 10,939 条训练样本 · 1,000 条测试样本 · 每个策略 1–100 条规则 | [摘要](AdaGuard__Arxiv_.pdf#page=1) |
+| **AgentHazard** | 2,653 个实例 · 10 类风险 · 10 类攻击策略 | [研究来源](https://arxiv.org/abs/2604.02947) |
+| **VERA-Bench** | 1,600 个可执行案例 · 124 类风险 | [研究来源](https://arxiv.org/abs/2607.01793) |
+| **BraveGuard 任务池** | 7,308 个任务 · 28 类风险 · 32 类攻击方法 | [研究来源](https://arxiv.org/abs/2606.01166) |
+| **CUA-EXEC 诊断集** | 4 个框架 · 各 100 条安全与 100 条不安全轨迹 | [研究来源](https://arxiv.org/abs/2609.15134) |
+| **AdaptiveSafety** | 10,939 条训练样本 · 1,000 条测试样本 · 每个策略 1–100 条规则 | [研究资源](https://github.com/Yunhao-Feng/AdaGuard) |
 
-**[指标探索页](https://yunhao-feng.github.io/AgentGuard/metrics.html)** 展示数据集统计、智能体攻击成功率、防护模型准确率／精确率／召回率／F1，以及规则识别能力。可切换评估条件、查看精确数值、导出当前表格；每组数据都链接至来源 PDF 页码。
+**[指标探索页](https://yunhao-feng.github.io/AgentGuard/metrics.html)** 展示数据集统计、智能体攻击成功率、防护模型准确率／精确率／召回率／F1，以及规则识别能力。可切换评估条件、查看精确数值、导出当前表格；每组数据均标明研究来源与评估表格。
 
 各项结果保留原始任务和基准条件。攻击成功、执行成功、二分类检测与规则识别回答不同问题，不合并成跨论文排行榜。完整来源见[机器可读数据](assets/data/metrics.json)。
+
+## 与 Jev 对比
+
+[查看对比页面](https://yunhao-feng.github.io/AgentGuard/jev.html)：同一评估中的结果、接口差异，以及双方各有优势的设置。
 
 ## 继续探索
 

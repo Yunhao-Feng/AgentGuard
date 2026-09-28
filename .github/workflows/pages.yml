@@ -20,11 +20,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
       - name: Prepare public files
-        run: |
-          mkdir _site
-          cp index.html metrics.html style.css metrics.css app.js metrics.js site-content.js .nojekyll _site/
-          cp -r assets _site/
-          cp ./*.pdf _site/
+        run: python3 scripts/build_site.py
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

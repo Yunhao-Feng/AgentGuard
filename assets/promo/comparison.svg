@@ -294,7 +294,7 @@ z
    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #536174" x="134.64" y="435.456" transform="rotate(-0 134.64 435.456)">100 safe + 100 unsafe trajectories per framework. Accuracy endpoint.</text>
   </g>
   <g id="text_23">
-   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #536174" x="134.64" y="449.28" transform="rotate(-0 134.64 449.28)">Source: supplied HazardAuditor manuscript, Table 1, PDF p. 8. See paper for recall/F1 trade-offs.</text>
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #536174" x="134.64" y="449.28" transform="rotate(-0 134.64 449.28)">Source: HazardAuditor evaluation, Table 1. See the metrics explorer for comparison settings.</text>
   </g>
  </g>
  <defs>

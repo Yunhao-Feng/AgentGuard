@@ -25,7 +25,7 @@
       "id": "evidence",
       "start": 3,
       "end": 7.5,
-      "label": "01 \u2014 UNDERSTAND THE RISK",
+      "label": "01 — UNDERSTAND THE RISK",
       "lines": [
         "Measure the risk.",
         "Verify the outcome."
@@ -36,7 +36,7 @@
       "id": "guards",
       "start": 7.5,
       "end": 12,
-      "label": "02 \u2014 BUILD THE DEFENSE",
+      "label": "02 — BUILD THE DEFENSE",
       "lines": [
         "Learn. Audit. Adapt."
       ],
@@ -59,16 +59,14 @@
       "instances": 2653,
       "risks": 10,
       "attacks": 10,
-      "pdf": "2604.02947v2.pdf",
-      "page": 6,
-      "table": "1"
+      "table": "1",
+      "url": "https://arxiv.org/abs/2604.02947"
     },
     "VERA": {
       "cases": 1600,
       "risks": 124,
-      "pdf": "2607.01793v2.pdf",
-      "page": 1,
-      "table": "Abstract"
+      "table": "Abstract",
+      "url": "https://arxiv.org/abs/2607.01793"
     }
   },
   "guard_cards": [

@@ -22,7 +22,7 @@ Our research connects **five complementary contributions**: a risk benchmark, an
 | **What actually happened?** | **VERA** | Discovers risks, builds executable safety cases, and verifies observable outcomes. | [Paper](https://arxiv.org/abs/2607.01793) · [Code](https://github.com/Yunhao-Feng/Vera) |
 | **How can guards learn from evolving threats?** | **BraveGuard** | Turns open-world threat discovery and execution traces into guard supervision. | [Paper](https://arxiv.org/abs/2606.01166) · [Code](https://github.com/Yunhao-Feng/BraveGuard) |
 | **How can training improve safety decisions?** | **HazardAuditor** | Grounds supervision in executable threats and refines auditing with GuardPO. | [Paper](https://arxiv.org/abs/2609.15134) · [Code](https://github.com/Yunhao-Feng/HazardAuditor) |
-| **What if the policy changes?** | **AdaGuard** | Assesses trajectories under user-defined policies and identifies violated rules, using AdaptiveSafety and SafePO. | [Paper](AdaGuard__Arxiv_.pdf) · [Code](https://github.com/Yunhao-Feng/AdaGuard) |
+| **What if the policy changes?** | **AdaGuard** | Assesses trajectories under user-defined policies and identifies violated rules, using AdaptiveSafety and SafePO. | [Research source](https://github.com/Yunhao-Feng/AdaGuard) · [Code](https://github.com/Yunhao-Feng/AdaGuard) |
 
 **Measure → Verify → Learn → Adapt.** This is a conceptual research direction; the five works are distinct contributions, rather than one integrated deployment.
 
@@ -48,15 +48,19 @@ Our research connects **five complementary contributions**: a risk benchmark, an
 
 | Artifact | Paper-reported scale | Source |
 | :-- | :-- | :-- |
-| **AgentHazard** | 2,653 instances · 10 risks · 10 attack strategies | [Table 1, p. 6](2604.02947v2.pdf#page=6) |
-| **VERA-Bench** | 1,600 executable cases · 124 risk categories | [Abstract](2607.01793v2.pdf#page=1) |
-| **BraveGuard task pool** | 7,308 tasks · 28 risks · 32 attack methods | [Table 4, p. 13](2606.01166v2.pdf#page=13) |
-| **CUA-EXEC diagnostic** | Four frameworks · 100 safe + 100 unsafe trajectories each | [Table 1, p. 8](379_HazardAuditor_From_Executa.pdf#page=8) |
-| **AdaptiveSafety** | 10,939 training examples · 1,000 test examples · 1–100 rules per policy | [Abstract](AdaGuard__Arxiv_.pdf#page=1) |
+| **AgentHazard** | 2,653 instances · 10 risks · 10 attack strategies | [Research source](https://arxiv.org/abs/2604.02947) |
+| **VERA-Bench** | 1,600 executable cases · 124 risk categories | [Research source](https://arxiv.org/abs/2607.01793) |
+| **BraveGuard task pool** | 7,308 tasks · 28 risks · 32 attack methods | [Research source](https://arxiv.org/abs/2606.01166) |
+| **CUA-EXEC diagnostic** | Four frameworks · 100 safe + 100 unsafe trajectories each | [Research source](https://arxiv.org/abs/2609.15134) |
+| **AdaptiveSafety** | 10,939 training examples · 1,000 test examples · 1–100 rules per policy | [Research source](https://github.com/Yunhao-Feng/AdaGuard) |
 
-The **[metrics explorer](https://yunhao-feng.github.io/AgentGuard/metrics.html)** includes dataset statistics, agent attack success, guard accuracy/precision/recall/F1, and rule identification. Filter by evaluation setting, inspect exact values, and export the current table. Every result links to its source PDF page.
+The **[metrics explorer](https://yunhao-feng.github.io/AgentGuard/metrics.html)** includes dataset statistics, agent attack success, guard accuracy/precision/recall/F1, and rule identification. Filter by evaluation setting, inspect exact values, and export the current table. Every result identifies its study and evaluation table.
 
 Results retain their original task and benchmark conditions. Attack success, execution success, binary detection, and rule identification answer different questions; they are not merged into a cross-paper ranking. See the [machine-readable evidence](assets/data/metrics.json).
+
+## Compare with Jev
+
+[Explore the comparison](https://yunhao-feng.github.io/AgentGuard/jev.html): matched evaluation rows, interface differences, and results where either approach leads.
 
 ## Explore the ecosystem
 

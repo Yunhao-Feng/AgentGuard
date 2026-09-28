@@ -13,18 +13,14 @@
       "instances": 2653,
       "risks": 10,
       "attacks": 10,
-      "pdf": "2604.02947v2.pdf",
-      "page": 6,
       "table": "1",
-      "sha256": "7e10f3451239b0de3315a321784a91460189fa591aacea2bf807a2d6d35a1aae"
+      "url": "https://arxiv.org/abs/2604.02947"
     },
     "VERA": {
       "cases": 1600,
       "risks": 124,
-      "pdf": "2607.01793v2.pdf",
-      "page": 1,
       "table": "Abstract",
-      "sha256": "eae6c8c8e7adbdbcae792bfb3b0bc045d5d46f981e903b181d340afa82d3cbda"
+      "url": "https://arxiv.org/abs/2607.01793"
     }
   },
   "audio": "Original procedural electronic score. No third-party samples or narration.",

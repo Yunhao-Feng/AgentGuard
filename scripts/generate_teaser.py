@@ -127,7 +127,7 @@ for i,s in enumerate(SC):
  vtt+=f"{stamp(s['start'])} --> {stamp(s['end'])}\n{s['caption']}\n\n";srt+=f"{i+1}\n{stamp(s['start'],',')} --> {stamp(s['end'],',')}\n{s['caption']}\n\n";transcript.append(f"{stamp(s['start'])} — {stamp(s['end'])}\n"+' '.join(s['lines'])+'\n'+s['caption'])
 (OUT/'captions.en.vtt').write_text(vtt);(OUT/'captions.en.srt').write_text(srt);(OUT/'transcript.en.txt').write_text('\n\n'.join(transcript)+'\n');shutil.copyfile(a.config,OUT/'storyboard.json')
 manifest={'title':C['title'],'team':C['team'],'duration':D,'fps':FPS,'size':[W,H],'type':'Animated research overview; no recorded model inference','sources':{},'audio':'Original procedural electronic score. No third-party samples or narration.','font':'DM Sans, SIL Open Font License 1.1; bundled license in assets/fonts/OFL.txt'}
-for k,e in C['evidence'].items():manifest['sources'][k]={**e,'sha256':hashlib.sha256((R/e['pdf']).read_bytes()).hexdigest()}
+for k,e in C['evidence'].items():manifest['sources'][k]=dict(e)
 if not a.preview_only:
  sr=48000;N=int(sr*D);t=np.arange(N)/sr;music=np.zeros((N,2),np.float64);rng=np.random.default_rng(42)
  chords=[[146.832,220,293.665,369.994],[130.813,195.998,261.626,329.628],[164.814,246.942,329.628,391.995],[146.832,220,293.665,440]]

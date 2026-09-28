@@ -1,22 +1,37 @@
-# Evidence and comparison settings
+# Research evidence
 
-All metrics are drawn from the five supplied paper PDFs. `assets/data/metrics.json` records their filenames and SHA-256 hashes, the source table/page for each view, metric labels, evaluation settings and exact values. `scripts/build_metrics.py` extracts decimal table rows and checks the expected row counts. VERA's Table IV and dataset statistics are transcribed explicitly in that script.
+The website renders curated numerical data and original conceptual diagrams. It does not distribute source document attachments or document metadata. Research provenance is expressed through work titles, public resource links, evaluation tables and experimental settings.
 
-| View | Source | What is measured |
+`assets/data/metrics.json` is the editable source of numerical results. Run `python3 scripts/build_metrics.py` to validate its schema and regenerate the browser bundle. New source values must be reviewed before inclusion; the script validates shape and ranges, not scientific correctness.
+
+| View | Research source | Evaluation |
 | --- | --- | --- |
-| AgentHazard | Table 2, PDF p. 6 | Attack success (%) and harmfulness (0–10); full trajectories judged by an LLM |
-| VERA | Table IV, PDF p. 8 | Execution success by agent framework and execution mode |
-| BraveGuard | Table 1, PDF p. 7 | Accuracy, recall and F1 on AgentHazard-Strongest, with four OpenClaw 3.11 backends |
-| HazardAuditor | Table 1, PDF p. 8 | Accuracy and macro metrics on balanced CUA-EXEC across four frameworks |
-| AdaGuard binary | Table 1, PDF p. 7 | Accuracy, precision, recall and F1 on AdaptiveSafety and DynaBench |
-| AdaGuard rules | Table 2, PDF p. 8 | Exact rule-set accuracy and rule-level micro-F1 |
+| AgentHazard | AgentHazard, Table 2 | Attack success and harmfulness by framework and backend |
+| VERA | VERA, Table IV | Execution success by framework and execution mode |
+| BraveGuard | BraveGuard, Table 1 | Accuracy, recall and F1 on AgentHazard-Strongest |
+| HazardAuditor | HazardAuditor, Table 1 | Accuracy and macro metrics on balanced CUA-EXEC |
+| AdaGuard binary | AdaGuard, Table 1 | AdaptiveSafety and DynaBench binary outcomes |
+| AdaGuard rules | AdaGuard, Table 2 | Exact rule-set accuracy and rule micro-F1 |
+| AdaGuard API comparison | AdaGuard, Table A1 | API and local-model binary outcomes on the same examples |
+| AdaGuard API rules | AdaGuard, Table A2 | Complete rule-set and micro-level outcomes |
+| HazardAuditor transfer | HazardAuditor, Table 2 | AgentHazard outcomes by agent backend |
 
-The statistics cards cite AgentHazard Table 1 (p. 6), VERA § V (pp. 6–7), BraveGuard Table 4 (p. 13), HazardAuditor Table 1 (p. 8), and the AdaGuard abstract. The 800 CUA-EXEC total is derived transparently as four framework subsets × 200 trajectories. Dataset counts describe distinct artifacts and are not summed.
+Public research links: [AgentHazard](https://arxiv.org/abs/2604.02947), [VERA](https://arxiv.org/abs/2607.01793), [BraveGuard](https://arxiv.org/abs/2606.01166), [HazardAuditor](https://arxiv.org/abs/2609.15134), [AdaGuard](https://github.com/Yunhao-Feng/AdaGuard).
 
-BraveGuard model-group means are labeled as averages. They compare different model groups, rather than a paired single-model change. AdaGuard's binary and rule-level outcomes are separate views. Higher attack-mode ESR in VERA means more harmful outcomes verified; higher benign ESR means more legitimate tasks completed. Neither is interchangeable with guard detection accuracy.
+The statistics cards use AgentHazard Table 1, VERA's evaluation setup, BraveGuard Table 4, HazardAuditor Table 1, and the AdaGuard dataset description. CUA-EXEC's 800 total is derived as four subsets × 200 trajectories. Different datasets are not added together.
 
-Bar lengths always start at zero. Harmfulness uses a 0–10 axis; percentage metrics use 0–100. The selected tables do not supply confidence intervals, so none are invented. Full table entries, including strong baselines and outcomes where our models do not lead, remain visible.
+## Jev comparison
 
-The overview film uses only AgentHazard and VERA size statistics; model performance belongs in the interactive metrics explorer where evaluation conditions remain readable.
+The comparison page selects Jev, HazardAuditor, BraveGuard and AdaGuard rows only where a shared evaluation reports them. No scores are joined across studies into a unified ranking.
 
-Research links and all seven user-provided HF endpoints were checked on 2026-09-28. AgentImages contains execution environment images, while VERA's evaluation cases have a separate repository link. AdaGuard's three model entries point directly to their supplied HF pages.
+CUA-EXEC contains 100 safe and 100 unsafe trajectories per framework. Its F1, recall and precision are macro-averaged. AgentHazard uses unsafe trajectories as the positive class and reports binary recall and F1.
+
+AdaptiveSafety uses 1,000 test examples; DynaBench uses 543. Jev and AdaGuard see the same examples but use different interfaces and inference budgets. Jev's probability is evaluated separately for each rule, with a threshold of 0.5; its selected rule set is serialized in policy order. AdaGuard emits an explanation and ordered rule identifiers. Jev's evaluated identifier is `typesafe/jev-1.13-20260917`; its server-side context handling is unknown. Local AdaGuard uses greedy BF16 decoding, a 16,000-token prompt budget and 512-token output budget. Invalid outputs count as errors.
+
+For rule identification, exact match requires the entire valid violation set. The micro metrics pool rule decisions as specified by the evaluation; failed predictions contribute an empty set to the micro counts and never count as exact. Binary detection and rule identification are distinct endpoints.
+
+Jev leads AdaGuard-8B on DynaBench accuracy, binary F1, exact rule-set accuracy and rule micro-F1; on AdaptiveSafety Jev has higher binary recall while AdaGuard-8B has higher accuracy and F1. These trade-offs remain visible. No equal-budget latency, cost or compute claim is made. Product-level descriptions refer to [TypeSafe's own overview](https://typesafe.ai/), not third-party performance claims.
+
+## Rendering
+
+All bars start at zero. Percentage metrics use 0–100; harmfulness uses 0–10. No uncertainty intervals were supplied for these selected tables, so none are invented. The method diagrams are original conceptual redrawings created by `scripts/generate_methods.py`; they are not screenshots of documents.

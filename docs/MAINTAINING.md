@@ -1,43 +1,36 @@
 # Website maintenance
 
-The public research landing page is [README.md](../README.md); its Chinese counterpart is [README.zh-CN.md](../README.zh-CN.md).
-
-## Local preview
+## Preview and publish
 
 ```bash
 python3 scripts/serve.py
 ```
 
-Open http://localhost:4173. The server supports byte-range requests for video seeking. The website is static HTML/CSS/JavaScript, with no build step or backend.
+Open http://localhost:4173. There is no frontend build step or backend. The preview server supports video byte ranges.
 
-## Publish with GitHub Pages
+For GitHub Pages, choose **Settings → Pages → Source → GitHub Actions**, then push changes to `main`. The workflow runs `python3 scripts/build_site.py`, packages an explicit list of public pages/assets, and deploys `_site`.
 
-1. In `Yunhao-Feng/AgentGuard` → **Settings → Pages → Build and deployment**, choose **GitHub Actions**.
-2. Commit and push changes to `main`.
-3. Check **Actions → Deploy research website to GitHub Pages** for deployment status.
+## Edit
 
-The workflow lives in `.github/workflows/pages.yml`. It copies the public pages, style sheets, scripts, paper PDFs, and assets into `_site`. Preview tooling, the rendering environment, and QA intermediates are excluded. Public URL: https://yunhao-feng.github.io/AgentGuard/.
+- `index.html`, `site-content.js`, `app.js`: bilingual homepage, resources, citations and policy case.
+- `metrics.html`, `metrics.js`, `metrics.css`: metrics explorer.
+- `jev.html`, `jev.js`, `jev.css`: Jev comparison and interpretation.
+- `style.css`: shared responsive identity.
+- `assets/data/metrics.json`: curated data, public research URLs and evaluation settings.
+- `assets/promo/results.js`: homepage headline values; keep consistent with the full dataset.
+- `scripts/build_metrics.py`: validate data and regenerate the browser bundle.
+- `scripts/generate_methods.py`: draw the bilingual method diagrams.
+- `scripts/generate_teaser.py`, `scripts/promo/teaser.json`: generate and edit the 15-second film.
 
-## Edit the site
+Keep English and Chinese copy synchronized. Language and theme settings are shared across all three pages.
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Homepage sections, research map, video, policy case |
-| `site-content.js` | English/Chinese homepage copy, paper links and citations |
-| `app.js` | Homepage interactions, translation, theme and resource lists |
-| `style.css` | Shared responsive identity and homepage styling |
-| `metrics.html`, `metrics.css`, `metrics.js` | Bilingual metrics explorer |
-| `assets/data/metrics.json` | Table data, settings, PDF pages and SHA-256 hashes |
-| `scripts/build_metrics.py` | Re-extract selected tables from the supplied PDFs |
-| `scripts/promo/teaser.json` | 15-second video's text, timeline and evidence |
-| `scripts/generate_teaser.py` | CPU-only rendering and original music synthesis |
+## Public asset policy
 
-Keep both languages in sync. Language and theme preferences persist locally and carry across both pages. Publication model names, dataset names and the English video remain in their original language.
+Keep source documents outside the public repository. Numerical data, original diagrams and public research links are sufficient to render the site. Do not add document screenshots, document fingerprints or private filenames to metadata. The build rejects document attachments, recursively checks ZIP members, and uses a file/directory allowlist. The source ZIP contains only the film renderer, its configuration, the font/license, documentation and the public source manifest.
 
-Rebuild numerical data with `python scripts/build_metrics.py` in an environment with PyMuPDF installed. Review changed table rows and source page numbers before committing. Headline data for homepage cards also lives in `scripts/promo/storyboard.json` and `assets/promo/results.js` from the original film. Keep matching values consistent when updating paper versions.
+Test the actual publication bundle locally with:
 
-## Assets
-
-The main video is `assets/teaser/agentguard-15s.mp4`; the 90-second film remains in `assets/promo/` as an archival artifact. The original 24-second concept generator is also retained. The main site and README promote only the new 15-second video.
-
-DM Sans is self-hosted in `assets/fonts/` with its SIL Open Font License. No third-party font request, analytics, or runtime framework is required.
+```bash
+python3 scripts/build_site.py
+python3 scripts/serve.py --directory _site --port 4174
+```

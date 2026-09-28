@@ -34,6 +34,6 @@ Modify `scripts/promo/teaser.json` to change text, card labels, statistics, sour
 | 7.5–12 s | BraveGuard, HazardAuditor and AdaGuard: learn, audit, adapt |
 | 12–15 s | Explore AgentGuard Team's open research |
 
-The source manifest records the paper versions with SHA-256 hashes. Statistics are paper-reported; there is no new model evaluation. Music is synthesized from code without samples; the font license is included.
+The source manifest records public research links and table references. Statistics are paper-reported; there is no new model evaluation. Music is synthesized from code without samples; the font license is included.
 
-Outputs include MP4, poster, storyboard, English VTT/SRT subtitles, transcript, source manifest and original WAV. Run `python scripts/package_teaser.py` to create the downloadable source archive. The archive includes everything required for this renderer, including the two source PDFs used for on-screen statistics and the font license.
+Outputs include MP4, poster, storyboard, English VTT/SRT subtitles, transcript, source manifest and original WAV. Run `python scripts/package_teaser.py` to create the downloadable source archive. The archive includes everything required for this renderer, including its configuration and the font license. No source documents are included.

@@ -1,5 +1,0 @@
-# Exact versions used for the delivered film (Python 3.12)
-Pillow==12.3.0
-numpy==2.3.5
-PyMuPDF==1.28.2
-matplotlib==3.11.2
