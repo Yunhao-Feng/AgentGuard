@@ -16,7 +16,7 @@ The website renders curated numerical data and original conceptual diagrams. It 
 | AdaGuard API rules | AdaGuard, Table A2 | Complete rule-set and micro-level outcomes |
 | HazardAuditor transfer | HazardAuditor, Table 2 | AgentHazard outcomes by agent backend |
 
-Public research links: [AgentHazard](https://arxiv.org/abs/2604.02947), [VERA](https://arxiv.org/abs/2607.01793), [BraveGuard](https://arxiv.org/abs/2606.01166), [HazardAuditor](https://arxiv.org/abs/2609.15134), [AdaGuard](https://github.com/Yunhao-Feng/AdaGuard).
+Public research links: [AgentHazard](https://arxiv.org/abs/2604.02947), [VERA](https://arxiv.org/abs/2607.01793), [BraveGuard](https://arxiv.org/abs/2606.01166), [HazardAuditor](https://arxiv.org/abs/2609.15134), [AdaGuard](https://arxiv.org/abs/2609.34241).
 
 The statistics cards use AgentHazard Table 1, VERA's evaluation setup, BraveGuard Table 4, HazardAuditor Table 1, and the AdaGuard dataset description. CUA-EXEC's 800 total is derived as four subsets × 200 trajectories. Different datasets are not added together.
 

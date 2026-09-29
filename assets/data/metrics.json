@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "sources": {
     "agenthazard": {
       "title": "AgentHazard",
@@ -19,7 +19,7 @@
     },
     "adaguard": {
       "title": "AdaGuard",
-      "url": "https://github.com/Yunhao-Feng/AdaGuard"
+      "url": "https://arxiv.org/abs/2609.34241"
     }
   },
   "tables": [

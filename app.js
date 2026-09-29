@@ -39,6 +39,8 @@
       ['VERA · AgentImages','https://huggingface.co/datasets/Yunhao-Feng/AgentImages','environments'],
       ['BraveGuard · Hugging Face','https://huggingface.co/Yunhao-Feng/BraveGuard','models'],
       ['HazardAuditor · Hugging Face','https://huggingface.co/Yunhao-Feng/HazardAuditor','models'],
+      ['AdaGuard · arXiv','https://arxiv.org/abs/2609.34241','paperArxiv'],
+      ['AdaGuard · Hugging Face Papers','https://huggingface.co/papers/2609.34241','paperDiscussion'],
       ['AdaGuard · 0.6B','https://huggingface.co/Yunhao-Feng/AdaGuard-0.6B','models'],
       ['AdaGuard · 4B','https://huggingface.co/Yunhao-Feng/AdaGuard-4B','models'],
       ['AdaGuard · 8B','https://huggingface.co/Yunhao-Feng/AdaGuard-8B','models']]],
